@@ -9,6 +9,11 @@ Devise was used for authentication for ease of use.
 Postresql was used for the database.
 Ruby 3.2.2 is required for this application
 
+The app has 3 different logins for you to use.
+Admin: Gives you the option to go to either toppings or pizzas index via a nav bar only visible on that account
+Chef: On login, routes you straight to the pizzas index
+Owner: On login, routes you straight to the toppings index
+
 
 ## Installation
 This app is live @ https://bostons-pizzeria.fly.dev/
