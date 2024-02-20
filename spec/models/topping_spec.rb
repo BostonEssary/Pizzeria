@@ -25,6 +25,6 @@ RSpec.describe Topping, type: :model do
   it "will not let two toppings of the same name be added to the db" do
     t1 = create(:topping, name: "Pepperoni")
 
-    expect {create(:topping, name: "Pepperoni") }.to raise_error(ActiveRecord::RecordNotUnique)
+    expect {create(:topping, name: "Pepperoni") }.to raise_error(ActiveRecord::RecordInvalid)
   end
 end

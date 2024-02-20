@@ -4,4 +4,6 @@ class Pizza < ApplicationRecord
 
     validates :toppings, presence: true
     validates :name, presence: true, uniqueness: { case_sensitive: false }
+
+    
 end

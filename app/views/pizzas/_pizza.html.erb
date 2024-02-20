@@ -1,13 +1,10 @@
-<div class="pizza-card">
+<div class="card">
     <h2><%= pizza.name %></h2>
-    <% pizza.toppings.each do |topping|%>
-        <%= topping.name %>
-    <% end %>
-    <div class="pizza-links">
-        <%= link_to "Edit Pizza", edit_pizza_path(pizza.id)%>
-        <%= link_to "Delete Pizza", pizza_path(pizza.id), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                    } %>
+    <h3>Toppings</h3>
+    <%= pizza.toppings.map{|topping| topping.name}.join(", ")%>
+    
+    <div class="card-links">
+        <%= link_to image_tag("edit.svg", size: "25"), edit_pizza_path(pizza.id), class: "card-btn"%>
+        <%= link_to image_tag("delete.svg", size: "25"), pizza_path(pizza.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "card-btn" %>
     </div>
 </div>

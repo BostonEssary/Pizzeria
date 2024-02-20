@@ -1,10 +1,9 @@
-<div class="topping-card">
+<div class="card">
     <h2><%= topping.name %></h2>
-    <div class="topping-links">
-        <%= link_to "Edit Topping", edit_topping_path(topping.id)%>
-        <%= link_to "Delete Topping", topping_path(topping.id), data: {
-                    turbo_method: :delete,
+    <div class="card-links">
+        <%= link_to image_tag("edit.svg", size: "25"), edit_topping_path(topping.id), class: "card-btn"%>
+        <%= link_to image_tag("delete.svg", size: "25"), topping_path(topping.id), data: {turbo_method: :delete, 
                     turbo_confirm: "Are you sure?"
-                    } %>
+                    }, class: "card-btn" %>
     </div>
 </div>

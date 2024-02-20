@@ -6,7 +6,6 @@ class PizzasController < ApplicationController
     
     def create
         @pizza = Pizza.new(allowed_pizza_params)
-        get_toppings
     
         if @pizza.save
             flash[:success] = "Pizza was added"
@@ -27,8 +26,6 @@ class PizzasController < ApplicationController
 
     def update
         @pizza = Pizza.find(params[:id])
-        get_toppings
-
 
         if @pizza.update(allowed_pizza_params)
             flash[:success] = "Pizza was updated"
@@ -49,18 +46,7 @@ class PizzasController < ApplicationController
 
     private
 
-    def get_toppings
-        toppings = []
-        if params[:toppings].nil? == false
-            
-            params[:toppings].each {|topping|
-            toppings.push(Topping.find(topping.to_i))
-        }
-        end
-        @pizza.toppings = toppings
-    end
-
     def allowed_pizza_params
-        params.require(:pizza).permit(:name)
+        params.require(:pizza).permit(:name, topping_ids: [])
     end
 end

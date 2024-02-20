@@ -1,0 +1,9 @@
+<div id="error_explanation">
+      <h4><%= pluralize(@pizza.errors.count, "error") %> prohibited this post from being saved:</h4>
+
+      <ul>
+      <% @pizza.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+</div>

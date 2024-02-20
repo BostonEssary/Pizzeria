@@ -1,4 +1,10 @@
-<ul>
+<h2 class="index-title">Welcome Back Owner!</h2>
+
+<%= turbo_frame_tag "new_topping" do %>
+        <%= link_to "Add a topping?", new_topping_path, class: "add-pizza-btn" %>
+<% end%>
+
+<h3 class="index-title">Current Toppings</h3>
     <% @toppings.each do |topping| %>
         <%= turbo_frame_tag topping do %>
             <%= render topping %>
@@ -7,9 +13,6 @@
         
     <% end %>
 
-    <%= turbo_frame_tag "new_topping" do %>
-        <%= link_to "Add a topping?", new_topping_path %>
-    <% end%>    
+        
 
     <%= turbo_page_requires_reload %>
-</ul>

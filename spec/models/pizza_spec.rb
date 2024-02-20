@@ -13,9 +13,15 @@ RSpec.describe Pizza, type: :model do
     expect(pizza.name).to eq("Pepperoni Pizza")
   end
 
-  it "will not let two toppings of the same name be added to the db" do
-    p1 = create(:pizza, name: "Pepperoni Pizza")
+  it "will not let two pizzas of the same name be added to the db" do
+    t1 = create(:topping)
+    p1 = create(:pizza, name: "Pepperoni Pizza", toppings: [t1])
 
-    expect {create(:pizza, name: "Pepperoni Pizza") }.to raise_error(ActiveRecord::RecordNotUnique)
+    expect {create(:pizza, name: "Pepperoni Pizza") }.to raise_error(ActiveRecord::RecordInvalid)
+  end
+
+  it "will not let a Pizza name be blank" do
+
+    expect {create(create(:pizza, name: "")) }.to raise_error(ActiveRecord::RecordInvalid)
   end
 end

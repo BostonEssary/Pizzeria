@@ -1,7 +1,5 @@
 <%= turbo_frame_tag "new_topping" do %>
-    <h2>New Topping</h2>
 
     <%= render "form", topping: @topping %>
 
-    <%= link_to "Nevermind", toppings_path%>
 <% end%>

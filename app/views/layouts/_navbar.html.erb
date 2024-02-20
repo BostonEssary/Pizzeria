@@ -1,0 +1,10 @@
+<nav class="navbar">
+    <ul>
+        <% if user_signed_in?%>
+            <li class="navbar-item"> <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "login-btn" ) %> </li>
+        <% else %>
+            <li class="navbar-item"> <%= button_to("Log in", new_user_session_path, method: :get, class: "login-btn" ) %> </li>
+        <% end %>
+    </ul>
+</nav>
+
