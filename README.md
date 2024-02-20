@@ -57,3 +57,8 @@ rails s
     admin@admin.com admin123
     owner@pizza.com owner123
     chef@pizza.com chef123
+
+12. Tests can be ran with the following command:
+```shell
+    rspec spec
+```
