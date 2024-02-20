@@ -58,7 +58,7 @@ rails s
     owner@pizza.com owner123
     chef@pizza.com chef123
 
-12. Tests can be ran with the following command:
+12. Tests can be ran by running the following command while in the project directory:
 ```shell
     rspec spec
 ```
