@@ -1,0 +1,15 @@
+<ul>
+    <% @pizzas.each do |pizza| %>
+        <%= turbo_frame_tag pizza do %>
+            <%= render pizza %>
+            
+        <% end %>
+        
+    <% end %>
+
+    <%= turbo_frame_tag "new_pizza" do %>
+        <%= link_to "Add a Pizza?", new_pizza_path %>
+    <% end%>    
+
+    <%= turbo_page_requires_reload %>
+</ul>

@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "new_pizza" do %>
+    <h2>New Pizza</h2>
+
+    <%= render "form", pizza: @pizza %>
+
+    <%= link_to "Nevermind", pizzas_path%>
+<% end%>

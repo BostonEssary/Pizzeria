@@ -1,0 +1,15 @@
+<ul>
+    <% @toppings.each do |topping| %>
+        <%= turbo_frame_tag topping do %>
+            <%= render topping %>
+            
+        <% end %>
+        
+    <% end %>
+
+    <%= turbo_frame_tag "new_topping" do %>
+        <%= link_to "Add a topping?", new_topping_path %>
+    <% end%>    
+
+    <%= turbo_page_requires_reload %>
+</ul>

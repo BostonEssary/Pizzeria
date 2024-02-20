@@ -1,0 +1,10 @@
+<div class="topping-card">
+    <h2><%= topping.name %></h2>
+    <div class="topping-links">
+        <%= link_to "Edit Topping", edit_topping_path(topping.id)%>
+        <%= link_to "Delete Topping", topping_path(topping.id), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                    } %>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<%= form_with model: pizza do |form| %>
+
+    <div>
+        <%= form.label :name%>
+        <%= form.text_field :name%>
+    </div>
+    <h3><%= form.label "Toppings"%></h3>
+    
+    <% Topping.all.each do |topping| %>
+        <div>
+            <%= form.label "#{topping.name}"%>
+            <%= check_box_tag('toppings[]', topping.id, pizza.topping_ids.include?(topping.id))%>
+        </div>
+    <% end %>
+
+    <div>
+        <%= form.submit%>
+    </div>
+    <% if @pizza.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pizza.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @pizza.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
