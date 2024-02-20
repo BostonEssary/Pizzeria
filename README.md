@@ -4,16 +4,16 @@
 
 ## Overview
 
-This is my version of the coding excercise. I used Ruby on Rails with vanilla CSS for styling.  
+This is my version of the coding excercise. It has a basic but intuitive UI for easy interaction I used Ruby on Rails with vanilla CSS for styling.  Turbo-Frames were used to provide a Single Page App feel.
 Devise was used for authentication for ease of use.
 Postresql was used for the database.
 Ruby 3.2.2 is required for this application
 
 
 ## Installation
-This app is live @ placeholder.placeholder
+This app is live @ https://bostons-pizzeria.fly.dev/
 
-If you would like to try this app for yourself, do the following:
+If you would like to try this app for yourself on your own machine, do the following:
 1. Open your terminal and navigate to your preferred directory for cloning the project.
 
 2. Clone the repository:
@@ -51,3 +51,9 @@ rails db:seed
 rails s
 ```
 
+10. Navigate to the address that was printed in your console
+
+11. Login with one of the following credentials
+    admin@admin.com admin123
+    owner@pizza.com owner123
+    chef@pizza.com chef123
